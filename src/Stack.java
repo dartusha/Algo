@@ -1,15 +1,15 @@
 class Stack{
     private int maxSize;
-    private int[] stack;
+    private char[] stack;
     private int top;
 
     public Stack(int size){
         this.maxSize = size;
-        this.stack = new int[this.maxSize];
+        this.stack = new char[this.maxSize];
         this.top = -1;
     }
 
-    public void push(int i){
+    public void push(char i){
         this.stack[++this.top] = i;
     }
 
