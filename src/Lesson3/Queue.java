@@ -1,3 +1,5 @@
+package Lesson3;
+
 class Queue{
     private int maxSize;
     private int[] queue;
