@@ -1,6 +1,7 @@
-import java.util.Iterator;
+package Lesson4;
+
 /*
-Задание 2. В методе main LinkIteratorApp проверить все методы итератора.
+Задание 2. В методе main Lesson4.LinkIteratorApp проверить все методы итератора.
  */
 public class LinkIteratorApp {
 

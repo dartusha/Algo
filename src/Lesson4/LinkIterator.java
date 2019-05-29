@@ -1,3 +1,5 @@
+package Lesson4;
+
 class LinkInterator{
     private Link current;
     private Link previous;

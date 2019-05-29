@@ -1,7 +1,6 @@
-import java.util.ArrayList;
-import java.util.ConcurrentModificationException;
+package Lesson4;
+
 import java.util.Iterator;
-import java.util.ListIterator;
 
 public class SimpleLinkedListImpl<E> implements LinkedList<E>{
     public Entry<E> current;

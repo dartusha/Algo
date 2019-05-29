@@ -1,3 +1,5 @@
+package Lesson4;
+
 public interface StackNew<E> {
 
     void push(E value);
