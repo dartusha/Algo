@@ -1,3 +1,6 @@
+package Lesson3;
+
+//3. Создать класс для реализации дека
 public class Deque {
     private int maxSize;
     private int[] deque;
@@ -7,7 +10,7 @@ public class Deque {
 
     private void addItems(){
         if (isFull())
-            throw new ArrayIndexOutOfBoundsException("Deque переполнен");
+            throw new ArrayIndexOutOfBoundsException("Lesson3.Deque переполнен");
         else
             items++;
 
@@ -15,7 +18,7 @@ public class Deque {
 
     private void removeItems(){
         if (isEmpty())
-            throw new ArrayIndexOutOfBoundsException("Deque пуст");
+            throw new ArrayIndexOutOfBoundsException("Lesson3.Deque пуст");
         else
             items--;
     }
@@ -23,27 +26,24 @@ public class Deque {
     public Deque(int s){
         maxSize = s;
         deque = new int[maxSize];
-        front = -1;
-        rear = -1;
-        items = 0;
+        front=-1;
+        rear=-1;
     }
 
-
     public void insertLeft(int i){
+        if (rear==maxSize-1) rear=-1;
+        if (front==-1) front=0;
         addItems();
-        if(rear==-1)
-            rear = maxSize;
-        deque[--rear] = i;
+        deque[++rear] = i;
     }
 
     public void insertRight(int i){
+        if (rear==-1) rear=maxSize;
+        if (front<=0) front=maxSize;
         addItems();
-        if(front == maxSize-1)
-            front = -1;
-        deque[++front] = i;
+        deque[--front] = i;
     }
 
-/*
     public int removeRight() {
         int temp = deque[front++];
         if (front == maxSize)
@@ -51,37 +51,23 @@ public class Deque {
         removeItems();
         return temp;
     }
-    */
-    public int removeRight() {
-    int temp = deque[front--];
-    if (front == -1)
-            front = maxSize-1;
-    removeItems();
-    return temp;
-}
 
-    public int removeLeft(){
-        int temp = deque[rear++];
-        if (rear == maxSize)
-            rear=0;
-        removeItems();
-        return temp;
-    }
-/*
-    public int removeLeft(){
+    public int removeLeft() {
         int temp = deque[rear--];
-        if(rear == -1)
+        if (rear<0)
             rear=maxSize-1;
         removeItems();
         return temp;
     }
-    */
+
 
     public int peekFront(){
         if (front==-1) front++;
+        if (front==maxSize) front--;
         return deque[front];
     }
     public int peekRear(){
+        if (rear==maxSize) rear--;
         if (rear==-1) rear++;
         return deque[rear];
     }

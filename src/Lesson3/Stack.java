@@ -1,3 +1,5 @@
+package Lesson3;
+
 class Stack{
     private int maxSize;
     private char[] stack;
