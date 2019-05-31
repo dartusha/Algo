@@ -1,3 +1,5 @@
+package Lesson4;
+
 class Link{
     public String name;
     public int age;

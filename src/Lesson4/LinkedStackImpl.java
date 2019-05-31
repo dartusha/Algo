@@ -1,18 +1,20 @@
-public class LinkedQueueImpl<E> implements QueueNew<E> {
+package Lesson4;
 
-    private TwoSideLinkedList<E> data;
+public class LinkedStackImpl<E> implements StackNew<E> {
 
-    public LinkedQueueImpl() {
-        this.data = new TwoSideLinkedListImpl<>();
+    private LinkedList<E> data;
+
+    public LinkedStackImpl() {
+        this.data = new SimpleLinkedListImpl<>();
     }
 
     @Override
-    public void insert(E value) {
-        data.insertLast(value);
+    public void push(E value) {
+        data.insertFirst(value);
     }
 
     @Override
-    public E remove() {
+    public E pop() {
         return data.removeFirst();
     }
 
@@ -34,5 +36,12 @@ public class LinkedQueueImpl<E> implements QueueNew<E> {
     @Override
     public int getSize() {
         return data.getSize();
+    }
+
+    @Override
+    public void clear() {
+        while (!data.isEmpty()) {
+            data.removeFirst();
+        }
     }
 }

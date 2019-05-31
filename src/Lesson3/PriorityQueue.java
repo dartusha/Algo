@@ -1,3 +1,5 @@
+package Lesson3;
+
 class PriorityQueue{
     private int maxSize;
     private int[] queueArray;

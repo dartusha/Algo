@@ -1,4 +1,4 @@
-import java.util.Iterator;
+package Lesson4;
 
 public interface LinkedList<E> extends Iterable<E> {
 
