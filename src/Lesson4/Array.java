@@ -1,3 +1,5 @@
+package Lesson4;
+
 public interface Array<E> {
 
     void add(E value);
